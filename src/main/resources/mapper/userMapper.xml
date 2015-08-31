@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ifeng.demo.entities.User">
+    <resultMap id="userResultMap" type="com.ifeng.demo.entities.User">
+        <result property="userId" column="userId" />
+        <result property="userName" column="userName" />
+        <result property="password" column="password" />
+    </resultMap>
+
+    <!--<select id="selectUserByLoginName"  parameterType="com.ifeng.uploadvedio.entities.User" resultMap="userResultMap">
+        select * from user where userName=#{userName} and password=#{password}
+    </select>
+
+
+    <update id="updatePassword"   parameterType="com.ifeng.uploadvedio.entities.User">
+        update user set password=#{password}
+        where userId=#{userId}
+    </update>-->
+
+    <insert id="insertUser" parameterType="com.ifeng.demo.entities.User" >
+        INSERT INTO USER(userName,password) VALUES (#{userName},#{password})
+    </insert>
+
+</mapper>
+
